@@ -22,6 +22,9 @@ Include the class in your project and call:
 CS_Fullscreen_Class.SetFullscreen.PressF11();
 ```
 
+Have fun using this class.
+Sincerly, Goddev Archer ^^
+
 ---
 
 <a name="deutsch"></a>
@@ -43,3 +46,6 @@ Binden Sie die Klasse in Ihr Projekt ein und rufen Sie sie auf:
 ```csharp
 CS_Fullscreen_Class.SetFullscreen.PressF11();
 ```
+
+Viel Spaß mit der Klasse!
+Euer Goddev Archer ^^
