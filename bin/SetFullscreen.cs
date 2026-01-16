@@ -3,7 +3,7 @@ using System;                                                                   
 
 namespace CS_Fullscreen_Class;                                                                                          // Namespace der Anwendung
 
-public class SetFullscreen                                                                                              // Klasse für Spieldaten und Eingabesteuerung
+public class SetFullscreen                                                                                              // Klasse für Fullscreen-Funktionalität 
 {
     public static void PressF11()                                                                                       // Methode zum Simulieren des Tastendrucks F11
     {
@@ -22,7 +22,7 @@ public class SetFullscreen                                                      
         inputs[1].U.ki.time = 0;                                                                                        // Zeitstempel für das Ereignis
         inputs[1].U.ki.dwExtraInfo = IntPtr.Zero;                                                                       // Zusätzliche Informationen
 
-        int structSize = Marshal.SizeOf(typeof(INPUT));                                                               // Größe der INPUT-Struktur
+        int structSize = Marshal.SizeOf(typeof(INPUT));                                                                 // Größe der INPUT-Struktur
         
         // Sollte SendInput fehlschlagen, wird eine Win32Exception mit dem letzten Fehlercode ausgelöst
         if (SendInput((uint)inputs.Length, inputs, structSize) == 0)                                                    // Senden der Eingaben
@@ -33,7 +33,7 @@ public class SetFullscreen                                                      
     const uint KEYEVENTF_KEYUP = 0x0002;                                                                                // Flag für Tastelosslassen
     const int INPUT_KEYBOARD = 1;                                                                                       // Eingabetyp für Tastatur
 
-    [DllImport("user32.dll", SetLastError = true)]                                                               // Import der SendInput-Funktion aus user32.dll
+    [DllImport("user32.dll", SetLastError = true)]                                                                      // Import der SendInput-Funktion aus user32.dll
     static extern uint SendInput(uint nInputs, INPUT[] pInputs, int cbSize);                                            // Senden von Eingaben an das System
 
     [StructLayout(LayoutKind.Sequential)]                                                                               // Struktur für die Eingabe
